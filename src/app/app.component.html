@@ -1,0 +1,68 @@
+<nav>
+  <a routerLink="/home">Home </a>
+  <a routerLink="/some-other-page">Other Page </a>
+  <a routerLink="/about">About </a>
+  <a routerLink="/contact">Contact</a>
+</nav>
+
+<!-- This is where the routed component will be displayed -->
+<router-outlet></router-outlet>
+<div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 11;">
+  <div id="myToast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        Hello, this is a toast message!
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+
+<!-- Button to trigger toast -->
+<button id="showToastButton" type="button" class="btn btn-primary">
+  Show Toast
+</button>
+
+<app-modal></app-modal>
+<div>
+  <h1>Custom Pipes Example</h1>
+
+  <!-- Truncate Pipe -->
+  <h3>Truncate Pipe</h3>
+  <p>
+    <strong>Description:</strong> The Truncate Pipe shortens a long string to a specified length and appends a suffix (like "..." or any other string). 
+    This is useful when displaying excerpts or limiting text length in your UI.
+  </p>
+  <p>
+    <strong>Original Text:</strong> "{{ longText }}"
+  </p>
+  <p>
+    <strong>Truncated Text (Limit: 20 characters):</strong> "{{ longText | truncate:20:'...' }}"
+  </p>
+
+  <!-- Multiply Pipe -->
+  <h3>Multiply Pipe</h3>
+  <p>
+    <strong>Description:</strong> The Multiply Pipe multiplies a number by a specified factor. This is useful for dynamically calculating values in templates, 
+    such as adjusting quantities or scaling numbers.
+  </p>
+  <p>
+    <strong>Original Number:</strong> {{ number }}
+  </p>
+  <p>
+    <strong>Multiplied by 3:</strong> {{ number | multiply:3 }}
+  </p>
+
+  <!-- Append Pipe -->
+  <h3>Append Pipe</h3>
+  <p>
+    <strong>Description:</strong> The Append Pipe adds a specified string to the end of another string. This is useful for appending additional text or labels 
+    to existing strings without modifying the original data in the component.
+  </p>
+  <p>
+    <strong>Original Text:</strong> "{{ title }}"
+  </p>
+  <p>
+    <strong>Appended Text (" - Angular Rocks!"):</strong> "{{ title | append:appendText }}"
+  </p>
+</div>
